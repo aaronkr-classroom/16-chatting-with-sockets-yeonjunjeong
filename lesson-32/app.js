@@ -100,14 +100,13 @@ const mongoose = require("mongoose"), // mongoose를 요청
   dbName = "aaronkr";
 
 // 데이터베이스 연결 설정
-mongoose.connect(`mongodb://127.0.0.1:27017/${dbName}`, {
-  useNewUrlParser: true,
-});
+mongoose.connect(
+  "mongodb+srv://ut-node:1234@ut-node.zlcuy0u.mongodb.net/?retryWrites=true&w=majority&appName=ut-node", //Atlas 경로
+);
 
-// 연결되면 메시지를 보냄
 const db = mongoose.connection;
 db.once("open", () => {
-  console.log(`Connected to ${dbName} MongoDB using Mongoose!`);
+  console.log("Connected to MONGODB!!!");
 });
 
 /**
